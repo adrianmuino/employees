@@ -1,0 +1,26 @@
+query EMPLOYEE{
+  e1: employeeById(id: "employee-1"){
+    id
+    firstName
+    lastName
+    dob
+    email
+    skill
+    level
+    active
+  }
+}
+
+query EMPLOYEES{
+  employees{
+    id
+    firstName
+    lastName
+    dob
+    email
+    skill
+    level
+    active
+  }
+}
+
