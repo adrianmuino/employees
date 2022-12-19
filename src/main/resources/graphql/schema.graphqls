@@ -1,11 +1,13 @@
 type Query {
   employees: [Employee]
   employeeById(id: ID!): Employee
+  skills: [Skill]
+  skillById(id: ID): Skill
 }
 
 type Mutation {
-  addEmployee(firstName: String!, lastName: String!, dob: String!, email: String!, skill: String!, level: String!, active: Boolean!): Employee
-  updateEmployee(id: ID!, firstName: String, lastName: String, dob: String, email: String, skill: String, level: String, active: Boolean): Employee
+  addEmployee(firstName: String!, lastName: String!, dob: String!, email: String!, skillId: String!, level: String!, active: Boolean!): Employee
+  updateEmployee(id: ID!, firstName: String, lastName: String, dob: String, email: String, skillId: String, level: String, active: Boolean): Employee
   deleteEmployee(id: ID!): Employee
 }
 
@@ -15,7 +17,13 @@ type Employee {
   lastName: String
   dob: String
   email: String
-  skill: String
+  skill: Skill
   level: String
   active: Boolean
+}
+
+type Skill {
+ id: ID
+ name: String
+ desc: String
 }

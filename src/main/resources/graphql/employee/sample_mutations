@@ -1,0 +1,45 @@
+mutation ADD_EMPLOYEE{
+  add1: addEmployee(firstName: "Adrian", lastName: "Muino", dob: "11/30/2000", email: "adrianmuino@test.com", skillId: "skill-2", level: "Intermediate", active: true){
+    id
+    firstName
+    lastName
+    dob
+    email
+    skill {
+      name
+    }
+    level
+    active
+  }
+}
+
+mutation MODIFY_EMPLOYEE{
+  up1: updateEmployee(id: "employee-2", firstName: "Pepe", lastName: "Pepe", dob: "11/30/2000", email: "pep@test.com", skillId: "skill-3", level: "Beginner", active: false){
+    id
+    firstName
+    lastName
+    dob
+    email
+    skill {
+      name
+    }
+    level
+    active
+  }
+}
+
+mutation DELETE_EMPLOYEE{
+  del1: deleteEmployee(id: "employee-3"){
+    id
+    firstName
+    lastName
+    dob
+    email
+    skill {
+      name
+    }
+    level
+    active
+  }
+}
+

@@ -1,0 +1,16 @@
+query SKILL{
+  s1: skillById(id: "skill-1"){
+    id
+    name
+    desc
+  }
+}
+
+query SKILLS{
+  skills{
+    id
+    name
+    desc
+  }
+}
+
