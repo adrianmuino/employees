@@ -1,9 +1,11 @@
 package models;
 
-import java.util.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document
 public class Skill {
-
+    @Id
     private String id;
     private String name;
     private String desc;
@@ -12,16 +14,6 @@ public class Skill {
         this.id = id;
         this.name = name;
         this.desc = desc;
-    }
-    
-    private static List<Skill> skills = Arrays.asList(
-            new Skill("skill-1", "Development", "Ability to develop software products"),
-            new Skill("skill-2", "UI Design", "Ability to design user interfaces"),
-            new Skill("skill-3", "Marketing", "Ability to attract customers and create brand awareness")
-    );
-
-    public static Skill getById(String id) {
-        return skills.stream().filter(skill -> skill.getId().equals(id)).findFirst().orElse(null);
     }
 
     public String getId() {
@@ -34,9 +26,5 @@ public class Skill {
 
     public String getDesc() {
         return desc;
-    }
-
-    public static List<Skill> getSkills() {
-        return skills;
     }
 }

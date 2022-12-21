@@ -6,8 +6,8 @@ type Query {
 }
 
 type Mutation {
-  addEmployee(firstName: String!, lastName: String!, dob: String!, email: String!, skillId: String!, level: String!, active: Boolean!): Employee
-  updateEmployee(id: ID!, firstName: String, lastName: String, dob: String, email: String, skillId: String, level: String, active: Boolean): Employee
+  addEmployee(firstName: String!, lastName: String!, dob: String!, email: String!, skillId: ID!, level: String!, active: Boolean!): Employee
+  updateEmployee(id: ID!, firstName: String, lastName: String, dob: String, email: String, skillId: ID, level: String, active: Boolean): Employee
   deleteEmployee(id: ID!): Employee
 }
 
